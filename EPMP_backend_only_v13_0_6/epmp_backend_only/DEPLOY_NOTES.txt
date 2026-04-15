@@ -1,0 +1,6 @@
+Backend package for Render.
+Recommended Render settings if deploying from a repo that contains this backend folder at repo root:
+- Root Directory: backend
+- Build Command: pip install -r requirements.txt
+- Start Command: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+Set CORS_ALLOWED_ORIGINS after you know your Cloudflare Pages URL.
