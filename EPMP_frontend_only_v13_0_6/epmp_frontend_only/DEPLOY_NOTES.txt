@@ -1,0 +1,3 @@
+Frontend-only package for Cloudflare Pages.
+Publish only these files.
+Before deployment, set js/config.js API_BASE_URL to your Render backend URL.
