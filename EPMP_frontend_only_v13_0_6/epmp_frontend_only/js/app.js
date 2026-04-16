@@ -991,7 +991,7 @@
 
       this.onResult(kind, { status: 'loading', items: null, error: null });
       const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
-      const timeout = controller ? window.setTimeout(() => controller.abort(), 5500) : null;
+      const timeout = controller ? window.setTimeout(() => controller.abort(), 15000) : null;
       return fetch(apiBaseUrl + '/api/blocs/' + encodeURIComponent(kind) + '/news?limit=' + encodeURIComponent(limit || 8), controller ? { signal: controller.signal } : undefined)
         .then((response) => {
           if (!response.ok) {
@@ -2545,7 +2545,7 @@
           <p>${escapeHtml(natoData.newsSummary || 'Alliance-level NATO headlines and transatlantic political developments.')}</p>
           <p class="content-card-note">This feed mixes official NATO updates with major alliance-shaping reporting about Washington, burden-sharing, summit politics and public rhetoric around NATO.</p>
         </article>
-        ${renderNewsList(natoData.news, 'NATO news is not loaded in this build yet.')}
+${renderNewsList(getBlocNewsItems('nato', natoData.news), 'NATO news is not loaded in this build yet.')}
       `;
     } else {
       content = `
