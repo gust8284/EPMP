@@ -991,7 +991,7 @@
 
       this.onResult(kind, { status: 'loading', items: null, error: null });
       const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
-      const timeout = controller ? window.setTimeout(() => controller.abort(), 15000) : null;
+      const timeout = controller ? window.setTimeout(() => controller.abort(), 20000) : null;
       return fetch(apiBaseUrl + '/api/blocs/' + encodeURIComponent(kind) + '/news?limit=' + encodeURIComponent(limit || 8), controller ? { signal: controller.signal } : undefined)
         .then((response) => {
           if (!response.ok) {
